@@ -7,6 +7,8 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 public class OrderServiceTest {
@@ -27,11 +29,13 @@ public class OrderServiceTest {
     @Test
     public void givenNoSale_whenGetCost_ReturnNormalPrice() throws Exception {
         assertEquals(100, orderService.getCostById(1));
+        verify(orderRepository, times(1)).getOrderById(1);
     }
 
     @Test
     public void givenIsSale_whenGetCost_ReturnDiscountedPrice() throws Exception {
         orderService.startSale();
         assertEquals(50, orderService.getCostById(1));
+        verify(orderRepository, times(1)).getOrderById(1);
     }
 }
