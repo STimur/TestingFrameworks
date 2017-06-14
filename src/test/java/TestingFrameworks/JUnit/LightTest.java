@@ -1,6 +1,5 @@
 package TestingFrameworks.JUnit;
 
-import TestingFrameworks.JUnit.Light;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
