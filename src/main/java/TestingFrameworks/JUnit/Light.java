@@ -1,4 +1,4 @@
-package TestingFrameworks;
+package TestingFrameworks.JUnit;
 
 public class Light {
     private boolean on;
@@ -12,6 +12,6 @@ public class Light {
     }
 
     public void switchOff() {
-
+        on = false;
     }
 }
