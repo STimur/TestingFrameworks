@@ -1,4 +1,4 @@
-package Mockito;
+package TestingFrameworks.Model;
 
 public class Order {
     private int price;

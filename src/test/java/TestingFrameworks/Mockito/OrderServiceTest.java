@@ -1,5 +1,6 @@
-package Mockito;
+package TestingFrameworks.Mockito;
 
+import TestingFrameworks.Model.Order;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
