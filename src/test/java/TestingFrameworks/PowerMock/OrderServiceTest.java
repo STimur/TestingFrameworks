@@ -11,8 +11,8 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
 import static org.junit.Assert.assertEquals;
-import static org.powermock.api.mockito.PowerMockito.mockStatic;
-import static org.powermock.api.mockito.PowerMockito.when;
+import static org.mockito.Mockito.times;
+import static org.powermock.api.mockito.PowerMockito.*;
 
 /**
  * Created by Timur on 14-Jun-17.
@@ -40,5 +40,7 @@ public class OrderServiceTest {
         when(OfferService.getSpecialOfferId()).thenReturn(1);
 
         assertEquals(100, orderService.getCostById(OfferService.getSpecialOfferId()));
+        verifyStatic(times(1));
+        OfferService.getSpecialOfferId();
     }
 }
